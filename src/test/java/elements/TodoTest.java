@@ -2,17 +2,29 @@ package elements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.awt.image.Kernel;
+import pages.TodoPage;
 
 public class TodoTest {
+    WebDriver driver;
+    TodoPage todoPage;
+
+    @BeforeClass()
+    void setUp() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.get("https://todomvc.com/examples/vanillajs/");
+        driver.manage().window().maximize();
+        todoPage = new TodoPage(driver);
+    }
+
     @Test
-    void todoTest(){
+    void todoTest() {
         /**
          * 1. Open browser
          * 2. Navigate to https://todomvc.com/examples/vanillajs/
@@ -21,47 +33,33 @@ public class TodoTest {
          * 5. Verify new todo is appear All/Active View
          * Number item left + 1
          */
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://todomvc.com/examples/vanillajs/");
-        driver.manage().window().maximize();
-
         //Check size of current list
-        int currentNumberOfList = 0;
-
-        if(driver.findElement(By.className("todo-list")).isDisplayed() == false){
-            currentNumberOfList = 0;
-        }else{
-            currentNumberOfList = driver.findElement(By.className("todo-list"))
-                    .findElements(By.tagName("li")).size();
-        }
-
+        int currentNumberOfList = TodoPage.checkSizeCurrentList();
         //Check current count number
-        String currentCountNumber = driver.findElement(By.className("todo-count"))
-                .findElement(By.tagName("strong")).getText();
-        if (currentCountNumber.equalsIgnoreCase("")){
-            currentCountNumber = "0";
-        }
+        String currentCountNumber = TodoPage.checkCurrentCountNumber();
 
-        //Fill in new todo with Do Homework.
-        driver.findElement(By.className("new-todo")).sendKeys("Do Homework", Keys.ENTER);
+        TodoPage.fillTodo("Do Homework");
 
         //Verify new todo is appear All View
         Assert.assertTrue(driver.findElement(By.xpath("//label[.='Do Homework']")).isDisplayed());
 
         //Verify new todo is appear Active View
-        driver.findElement(By.xpath("//a[.='Active']")).click();
+        TodoPage.selectTab("Active");
         Assert.assertTrue(driver.findElement(By.xpath("//label[.='Do Homework']")).isDisplayed());
 
         //Check size of the list after fill value
-        int countList = driver.findElement(By.className("todo-list")).findElements(By.tagName("li")).size();
-        Assert.assertEquals(countList,currentNumberOfList+1);
+        int countList = TodoPage.checkSizeList();
+        Assert.assertEquals(countList, currentNumberOfList + 1);
 
 //      Check Count Number after fill value
-        String countNumber = driver.findElement(By.className("todo-count"))
-                .findElement(By.tagName("strong")).getText();
-        Assert.assertEquals(Integer.parseInt(countNumber), Integer.parseInt(currentCountNumber)+ 1);
+        String countNumber = TodoPage.checkCountNumber();
+        Assert.assertEquals(Integer.parseInt(countNumber), Integer.parseInt(currentCountNumber) + 1);
 
+    }
+    
+    @AfterClass(alwaysRun = true)
+    void tearDown() {
+        driver.quit();
     }
 
 }
