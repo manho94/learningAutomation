@@ -56,7 +56,7 @@ public class TodoTest {
         Assert.assertEquals(Integer.parseInt(countNumber), Integer.parseInt(currentCountNumber) + 1);
 
     }
-    
+
     @AfterClass(alwaysRun = true)
     void tearDown() {
         driver.quit();
