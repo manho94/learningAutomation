@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import pages.HyperLinkPage;
 
 public class HyperLinkTest {
     /**
@@ -26,39 +27,44 @@ public class HyperLinkTest {
      * Click on "go here"
      */
     //Test  = [(action + verification)...]
-    @Test
-    void hyperLinkTest(){
+    static WebDriver driver;
+    HyperLinkPage hyperLinkPage;
+    @BeforeClass
+    void setUp(){
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/status_codes");
-        driver.manage().window().maximize();
-
-        //Clicking on 200
-        driver.findElement(By.linkText("200")).click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes/200");
-        //Click on "go here"
-        //driver.findElement(By.linkText("here")).click();
-        driver.navigate().back();
-
-        //Click on "301"
-        driver.findElement(By.linkText("301")).click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes/301");
-        //Click on "go here"
-        driver.findElement(By.linkText("here")).click();
-
-        //Click on "404"
-        driver.findElement(By.linkText("404")).click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes/404");
-        //Click on "go here"
-        driver.findElement(By.linkText("here")).click();
-
-        //Click on "500"
-        driver.findElement(By.linkText("500")).click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes/500");
-        //Click on "go here"
-        driver.findElement(By.linkText("here")).click();
-
-        driver.quit();
-
+        driver = new ChromeDriver();
     }
+    @BeforeMethod
+    void openBrowser(){
+        hyperLinkPage = new HyperLinkPage(driver);
+        hyperLinkPage.open();
+    }
+
+    @DataProvider
+    Object[][] statusCode(){
+        return new Object[][]{
+                {"200"},
+                {"301"},
+                {"404"},
+                {"500"}
+        };
+    }
+
+    @Test(dataProvider = "statusCode")
+    void verifyLink(String status){
+        hyperLinkPage.clickLink(status);
+        Assert.assertEquals(driver.getCurrentUrl(),"https://the-internet.herokuapp.com/status_codes/" + status);
+    }
+
+    @AfterMethod
+    void backToStatusPage(){
+        driver.navigate().back();
+    }
+
+    @AfterClass
+    void tearDown(){
+        driver.quit();
+    }
+
+
 }
