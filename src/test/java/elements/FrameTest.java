@@ -1,24 +1,40 @@
 package elements;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.FramePage;
 
 public class FrameTest {
-    @Test
-    void tc01(){
+    WebDriver driver;
+    FramePage framePage;
+    @BeforeClass
+    void setUp(){
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/nested_frames");
-        driver.manage().window().maximize();
+        driver = new ChromeDriver();
+    }
 
-        driver.switchTo().frame("frame-top");
-        driver.switchTo().frame("frame-middle");
-        String content = driver.findElement(By.id("content")).getText();
+    @BeforeMethod
+    void openBrowser(){
+        framePage = new FramePage(driver);
+        framePage.open();
+    }
+
+    @Test
+    void verifyTopMiddleFrame(){
+        framePage.switchFrame("frame-top");
+        framePage.switchFrame("frame-middle");
+        String content = framePage.getTextById();
         Assert.assertEquals(content,"MIDDLE");
+    }
+
+    @AfterMethod
+    void tearDown(){
         driver.quit();
     }
 }

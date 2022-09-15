@@ -7,24 +7,41 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import pages.DropDownPage;
 
 public class DropdownTest {
-    @Test
-    void dropdownVerify(){
+    WebDriver driver;
+    DropDownPage dropDownPage;
+    @BeforeClass
+    void setUp(){
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/dropdown");
-        //Find Element Dropdown
-        Select dropdown1 = new Select(driver.findElement(By.id("dropdown")));
-//        dropdown1.selectByVisibleText("Option 1");
-//        dropdown1.selectByValue("1");
-        dropdown1.selectByIndex(1);
-        Assert.assertTrue(driver.findElement(By.cssSelector("option[value='1']")).isSelected());
+        driver = new ChromeDriver();
+    }
 
-//        Assert.assertTrue(driver.findElement(By.id("dropdown"))
-//                .findElement(By.cssSelector("option[value='1']")).isSelected());
-//        Assert.assertTrue(driver.findElement(By.xpath("//select[@id='dropdown']/option[2]")).isSelected());
-//        Assert.assertTrue(driver.findElements(By.cssSelector("select#dropdown>option")).get(1).isSelected());
+    @BeforeMethod
+    void openBrowser(){
+        dropDownPage = new DropDownPage(driver);
+        dropDownPage.open();
+    }
+
+    @DataProvider
+    Object[][] dropDownIndex(){
+        return new Object[][]{
+                {1},
+                {2}
+        };
+    }
+
+    @Test(dataProvider = "dropDownIndex")
+    void dropdownVerify(int index){
+        dropDownPage.selectDropDown(index);
+        Assert.assertTrue(driver.findElement(By.cssSelector(String.format("option[value='%d']",index))).isSelected());
+
+    }
+
+    @AfterClass
+    void tearDown(){
+        driver.quit();
     }
 }

@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.util.Strings;
 
 public class UnitCalculatorPage {
     WebDriver driver;

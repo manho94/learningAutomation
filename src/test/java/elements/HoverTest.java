@@ -4,34 +4,39 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import pages.HoverPage;
 
 public class HoverTest {
     static WebDriver driver;
-
+    HoverPage hoverPage;
 
     @BeforeClass
     void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/hovers");
-        driver.manage().window().maximize();
-    }
-    @Test
-    void user1(){
-        Actions mouse = new Actions(driver);
-        mouse.moveToElement(driver.findElement(By.xpath("//div[@class='figure'][1]"))).perform();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='figure'][1]/div[@class='figcaption']")).isDisplayed());
-    }
-
-    @Test
-    void contextClick(){
 
     }
+    @BeforeMethod
+    void openChrome(){
+        hoverPage = new HoverPage(driver);
+        hoverPage.open();
+    }
+    @DataProvider
+    Object[][] userIndex(){
+        return new Object[][]{
+                {1},
+                {2},
+                {3}
+        };
+    }
+    @Test(dataProvider = "userIndex")
+    void checkHoverOnUser(int index){
+        hoverPage.hoverOnUser(index);
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("//div[@class='figure'][%d]/div[@class='figcaption']",index))).isDisplayed());
+    }
+
 
     @AfterClass(alwaysRun = true)
     void tearDown(){

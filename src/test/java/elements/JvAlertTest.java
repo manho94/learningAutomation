@@ -7,19 +7,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.JvAlertPage;
 
 public class JvAlertTest {
 
     WebDriver driver;
+    JvAlertPage jvAlertPage;
     @BeforeClass()
     void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
-        driver.manage().window().maximize();
-    }
 
+    }
+    @BeforeMethod
+    public void openChrome(){
+        jvAlertPage = new JvAlertPage(driver);
+        jvAlertPage.open();
+    }
 
     @Test
     void JvAlertTest(){
@@ -28,35 +34,40 @@ public class JvAlertTest {
 
     @Test
     void JsConfirmOK(){
-        driver.findElement(By.xpath("//button[.='Click for JS Confirm']")).click();
-        driver.switchTo().alert().accept();
-        Assert.assertTrue(driver.findElement(By.id("result")).isDisplayed());
-        String result = driver.findElement(By.id("result")).getText();
+
+        jvAlertPage.clickButton(By.xpath("//button[.='Click for JS Confirm']"));
+        jvAlertPage.acceptPopup();
+        String result = jvAlertPage.getResult();
         Assert.assertEquals(result,"You clicked: Ok");
 
-
-
     }
+
+
 
     @Test
     void jsConfirmCancel(){
         driver.findElement(By.xpath("//button[normalize-space()='Click for JS Confirm']")).click();
-        driver.switchTo().alert().dismiss();
-        String result = driver.findElement(By.id("result")).getText();
+        jvAlertPage.dismissPopup();
+        String result = jvAlertPage.getResult();
         Assert.assertEquals(result,"You clicked: Cancel");
     }
+
 
     @Test
     void jsPrompt(){
         driver.findElement(By.xpath("//button[normalize-space()='Click for JS Prompt']")).click();
-        driver.switchTo().alert().sendKeys("Hello");
-        driver.switchTo().alert().accept();
-        String result = driver.findElement(By.id("result")).getText();
+        jvAlertPage.sendKeyToPopUp("Hello");
+        jvAlertPage.acceptPopup();
+        String result = jvAlertPage.getResult();
         Assert.assertEquals(result,"You entered: Hello");
     }
+
 
     @AfterClass(alwaysRun = true)
     void tearDown(){
         driver.quit();
     }
+
+
 }
+
