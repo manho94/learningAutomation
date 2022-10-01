@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-24T21:30:28 ICT" name="Body Mass Index Calculator" finished-at="2022-09-24T21:30:56 ICT" duration-ms="28219">
+    <groups>
+    </groups>
+    <test started-at="2022-09-24T21:30:28 ICT" name="Chrome" finished-at="2022-09-24T21:30:42 ICT" duration-ms="14305">
+      <class name="features.bmi.UnitCalculatorTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:28 ICT" name="setUp" finished-at="2022-09-24T21:30:39 ICT" duration-ms="10973" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.calculator.net/bmi-calculator.html]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="selectUnit()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:39 ICT" name="selectUnit" finished-at="2022-09-24T21:30:39 ICT" duration-ms="48" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectUnit -->
+        <test-method signature="unitCalculator1()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:39 ICT" name="unitCalculator1" finished-at="2022-09-24T21:30:40 ICT" duration-ms="1056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitCalculator1 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:40 ICT" name="tearDown" finished-at="2022-09-24T21:30:40 ICT" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=unitCalculator1 status=SUCCESS method=UnitCalculatorTest.unitCalculator1()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="selectUnit()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:40 ICT" name="selectUnit" finished-at="2022-09-24T21:30:40 ICT" duration-ms="39" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectUnit -->
+        <test-method signature="unitCalculator2()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:40 ICT" name="unitCalculator2" finished-at="2022-09-24T21:30:41 ICT" duration-ms="1200" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at features.bmi.UnitCalculatorTest.unitCalculator2(UnitCalculatorTest.java:54)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitCalculator2 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:42 ICT" name="tearDown" finished-at="2022-09-24T21:30:42 ICT" duration-ms="215" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=unitCalculator2 status=FAILURE method=UnitCalculatorTest.unitCalculator2()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.bmi.UnitCalculatorTest@72805168]" started-at="2022-09-24T21:30:42 ICT" name="tearDown" finished-at="2022-09-24T21:30:42 ICT" duration-ms="226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- features.bmi.UnitCalculatorTest -->
+    </test> <!-- Chrome -->
+    <test started-at="2022-09-24T21:30:42 ICT" name="firefox" finished-at="2022-09-24T21:30:56 ICT" duration-ms="13853">
+      <class name="features.bmi.UnitCalculatorTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:42 ICT" name="setUp" finished-at="2022-09-24T21:30:49 ICT" duration-ms="6697" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.calculator.net/bmi-calculator.html]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="selectUnit()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:49 ICT" name="selectUnit" finished-at="2022-09-24T21:30:49 ICT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectUnit -->
+        <test-method signature="unitCalculator1()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:49 ICT" name="unitCalculator1" finished-at="2022-09-24T21:30:50 ICT" duration-ms="1136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitCalculator1 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:50 ICT" name="tearDown" finished-at="2022-09-24T21:30:50 ICT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=unitCalculator1 status=SUCCESS method=UnitCalculatorTest.unitCalculator1()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="selectUnit()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:50 ICT" name="selectUnit" finished-at="2022-09-24T21:30:50 ICT" duration-ms="48" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectUnit -->
+        <test-method signature="unitCalculator2()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:50 ICT" name="unitCalculator2" finished-at="2022-09-24T21:30:55 ICT" duration-ms="5024" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at features.bmi.UnitCalculatorTest.unitCalculator2(UnitCalculatorTest.java:54)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unitCalculator2 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:56 ICT" name="tearDown" finished-at="2022-09-24T21:30:56 ICT" duration-ms="387" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=unitCalculator2 status=FAILURE method=UnitCalculatorTest.unitCalculator2()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.bmi.UnitCalculatorTest@1e6308a9]" started-at="2022-09-24T21:30:56 ICT" name="tearDown" finished-at="2022-09-24T21:30:56 ICT" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- features.bmi.UnitCalculatorTest -->
+    </test> <!-- firefox -->
+  </suite> <!-- Body Mass Index Calculator -->
+</testng-results>

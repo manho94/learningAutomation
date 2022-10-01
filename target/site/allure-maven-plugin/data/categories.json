@@ -1,0 +1,37 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]",
+      "children" : [ {
+        "name" : "unitCalculator2",
+        "uid" : "b53672d3e4bb5473",
+        "parentUid" : "4ecf1cfb927b16a7a9b2096393c3dea6",
+        "status" : "failed",
+        "time" : {
+          "start" : 1664029840716,
+          "stop" : 1664029842236,
+          "duration" : 1520
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome", "https://www.calculator.net/bmi-calculator.html" ]
+      }, {
+        "name" : "unitCalculator2",
+        "uid" : "92c527b74bf351ec",
+        "parentUid" : "4ecf1cfb927b16a7a9b2096393c3dea6",
+        "status" : "failed",
+        "time" : {
+          "start" : 1664029850685,
+          "stop" : 1664029856016,
+          "duration" : 5331
+        },
+        "flaky" : false,
+        "parameters" : [ "firefox", "https://www.calculator.net/bmi-calculator.html" ]
+      } ],
+      "uid" : "4ecf1cfb927b16a7a9b2096393c3dea6"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

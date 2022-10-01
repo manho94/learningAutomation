@@ -1,0 +1,73 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Body Mass Index Calculator",
+    "children" : [ {
+      "name" : "Chrome",
+      "children" : [ {
+        "name" : "features.bmi.UnitCalculatorTest",
+        "children" : [ {
+          "name" : "unitCalculator1",
+          "uid" : "475e2b4584ae9c76",
+          "parentUid" : "78cd15d69ddad1508e8537c657ecc786",
+          "status" : "passed",
+          "time" : {
+            "start" : 1664029839643,
+            "stop" : 1664029840657,
+            "duration" : 1014
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome", "https://www.calculator.net/bmi-calculator.html" ]
+        }, {
+          "name" : "unitCalculator2",
+          "uid" : "b53672d3e4bb5473",
+          "parentUid" : "78cd15d69ddad1508e8537c657ecc786",
+          "status" : "failed",
+          "time" : {
+            "start" : 1664029840716,
+            "stop" : 1664029842236,
+            "duration" : 1520
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome", "https://www.calculator.net/bmi-calculator.html" ]
+        } ],
+        "uid" : "78cd15d69ddad1508e8537c657ecc786"
+      } ],
+      "uid" : "e3b2207bf5089e12509ef9130cd07773"
+    }, {
+      "name" : "firefox",
+      "children" : [ {
+        "name" : "features.bmi.UnitCalculatorTest",
+        "children" : [ {
+          "name" : "unitCalculator1",
+          "uid" : "d621ef781cf7c16b",
+          "parentUid" : "12777537790947938178b76010549d67",
+          "status" : "passed",
+          "time" : {
+            "start" : 1664029849495,
+            "stop" : 1664029850628,
+            "duration" : 1133
+          },
+          "flaky" : false,
+          "parameters" : [ "firefox", "https://www.calculator.net/bmi-calculator.html" ]
+        }, {
+          "name" : "unitCalculator2",
+          "uid" : "92c527b74bf351ec",
+          "parentUid" : "12777537790947938178b76010549d67",
+          "status" : "failed",
+          "time" : {
+            "start" : 1664029850685,
+            "stop" : 1664029856016,
+            "duration" : 5331
+          },
+          "flaky" : false,
+          "parameters" : [ "firefox", "https://www.calculator.net/bmi-calculator.html" ]
+        } ],
+        "uid" : "12777537790947938178b76010549d67"
+      } ],
+      "uid" : "3c0d814fb5e25b4be3cfea8acfaa8871"
+    } ],
+    "uid" : "09db9bd9212bbc9a8c7de7f06c6e5b6f"
+  } ]
+}

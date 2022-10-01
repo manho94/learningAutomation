@@ -2,10 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import supports.Browser;
 import org.testng.util.Strings;
 
-public class UnitCalculatorPage {
-    WebDriver driver;
+public class UnitCalculatorPage extends Browser {
     private By clearButton = By.cssSelector("img[class='clearbtn']");
     private By ageTextBox = By.cssSelector("input#cage");
     private By maleRadioButton = By.xpath("//label[normalize-space()='Male']");
@@ -16,10 +16,11 @@ public class UnitCalculatorPage {
     private By resultLabel = By.cssSelector("div[class='bigtext']");
     private By unitMetricButton = By.id("menuon");
 
-    public UnitCalculatorPage(WebDriver driver) {
-        this.driver = driver;
+    public UnitCalculatorPage() {
     }
-
+    public String getResult() {
+        return driver.findElement(resultLabel).getText();
+    }
     public void clearForm() {
         driver.findElement(clearButton).click();
     }
@@ -34,10 +35,6 @@ public class UnitCalculatorPage {
         driver.findElement(heightTextBox).sendKeys(height);
         driver.findElement(weightTextBox).sendKeys(weight);
         driver.findElement(calculatorButton).click();
-    }
-
-    public String getResult() {
-        return driver.findElement(resultLabel).getText();
     }
 
     public void selectUnitMetric() {

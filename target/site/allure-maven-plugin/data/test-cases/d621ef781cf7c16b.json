@@ -1,0 +1,131 @@
+{
+  "uid" : "d621ef781cf7c16b",
+  "name" : "unitCalculator1",
+  "fullName" : "features.bmi.UnitCalculatorTest.unitCalculator1",
+  "historyId" : "a84d44ac7a5315f3fecf7b7e66d2df9e",
+  "time" : {
+    "start" : 1664029849495,
+    "stop" : 1664029850628,
+    "duration" : 1133
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "selectUnit",
+    "time" : {
+      "start" : 1664029849446,
+      "stop" : 1664029849490,
+      "duration" : 44
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1664029842749,
+      "stop" : 1664029849446,
+      "duration" : 6697
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1664029856408,
+      "stop" : 1664029856600,
+      "duration" : 192
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1664029850630,
+      "stop" : 1664029850630,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "features.bmi.UnitCalculatorTest"
+  }, {
+    "name" : "testClass",
+    "value" : "features.bmi.UnitCalculatorTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "unitCalculator1"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Body Mass Index Calculator"
+  }, {
+    "name" : "suite",
+    "value" : "firefox"
+  }, {
+    "name" : "subSuite",
+    "value" : "features.bmi.UnitCalculatorTest"
+  }, {
+    "name" : "host",
+    "value" : "HoaNang"
+  }, {
+    "name" : "thread",
+    "value" : "14184@HoaNang.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "firefox"
+  }, {
+    "name" : "url",
+    "value" : "https://www.calculator.net/bmi-calculator.html"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d621ef781cf7c16b.json",
+  "parameterValues" : [ "firefox", "https://www.calculator.net/bmi-calculator.html" ]
+}

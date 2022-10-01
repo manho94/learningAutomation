@@ -2,7 +2,7 @@
     <test name="chrome">
         <classes>
             <parameter name = "browser" value="Chrome" />
-            <class name ="elements.TestSample"/>
+            <class name ="features.elements.TestSample"/>
         </classes>
 
     </test>
@@ -10,7 +10,7 @@
     <test name="firefox">
         <classes>
             <parameter name = "browser" value = "Firefox"/>
-            <class name ="elements.TestSample2">
+            <class name ="features.elements.TestSample2">
                 <methods>
                     <exclude name = "tc01"/>
                 </methods>

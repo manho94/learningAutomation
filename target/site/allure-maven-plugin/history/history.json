@@ -1,0 +1,80 @@
+{
+  "a84d44ac7a5315f3fecf7b7e66d2df9e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d621ef781cf7c16b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1664029849495,
+        "stop" : 1664029850628,
+        "duration" : 1133
+      }
+    } ]
+  },
+  "ac4d04fccd0342f25ddfe8085ffa397d" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b53672d3e4bb5473",
+      "status" : "failed",
+      "statusDetails" : "expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]",
+      "time" : {
+        "start" : 1664029840716,
+        "stop" : 1664029842236,
+        "duration" : 1520
+      }
+    } ]
+  },
+  "696f78e64567598c37cd31ccaf770ba2" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "92c527b74bf351ec",
+      "status" : "failed",
+      "statusDetails" : "expected [BMI = 20.2 kg/m2   (Normal)] but found [BMI = 20.6 kg/m2   (Normal)]",
+      "time" : {
+        "start" : 1664029850685,
+        "stop" : 1664029856016,
+        "duration" : 5331
+      }
+    } ]
+  },
+  "399bcc1437033aabfd74475c981cb118" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "475e2b4584ae9c76",
+      "status" : "passed",
+      "time" : {
+        "start" : 1664029839643,
+        "stop" : 1664029840657,
+        "duration" : 1014
+      }
+    } ]
+  }
+}
